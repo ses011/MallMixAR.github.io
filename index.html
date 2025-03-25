@@ -180,22 +180,22 @@
 
     <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false;" renderer="antialias: true;">
         
-        <!-- Porsche Model anchored to GPS -->
-        <a-entity gps-entity-place="latitude: 43.08422; longitude: -77.63249" static-body>
-            <a-gltf-model 
-                src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
-                scale="12 12 12" 
-                rotation="0 -90 0">
-            </a-gltf-model>
+        <!-- Porsche Model fixed to GPS coordinates -->
+        <a-entity gps-entity-place="latitude: 43.08422; longitude: -77.63249" 
+                  scale="12 12 12" 
+                  position="0 0 0" 
+                  rotation="0 -90 0">
+            <a-gltf-model src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"></a-gltf-model>
         </a-entity>
 
-        <!-- GPS Camera to enable AR functionality, it does not affect model's position -->
+        <!-- Camera for AR functionality -->
         <a-camera gps-camera rotation-reader></a-camera>
 
     </a-scene>
 
 </body>
 </html>
+
 
 
 
