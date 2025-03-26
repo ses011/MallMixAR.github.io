@@ -101,10 +101,10 @@
 
 
 
-    <a-entity gps-entity-place="latitude: 43.0837; longitude: -77.6765" static-body>
+    <!-- <a-entity gps-entity-place="latitude: 43.0837; longitude: -77.6765" static-body>
       <a-gltf-model id="porsche" src="https://ses011.github.io/MallMixAR.github.io//porsche/scene.gltf" scale="5 5 5"
         rotation="0 -90 0" class="clickable">
-      </a-gltf-model>
+      </a-gltf-model> -->
 
 
       <!-- <a-entity gps-entity-place="latitude: 43.08424; longitude: -77.63249"> -->
@@ -131,7 +131,14 @@
 
 
 
-    </a-entity>
+    <!-- </a-entity> -->
+
+       <!-- Example GPS entity using gps-entity-place -->
+       <a-entity 
+       gps-entity-place="latitude: 43.0842; longitude: -77.63249" 
+       custom-listener>
+       <a-sphere radius="1" color="blue"></a-sphere>
+      </a-entity>
 
       <!-- <a-camera gps-camera="simulateAltitude: true; gpsMinDistance: 1;" position="0 1.6 0" look-controls>  -->
         <a-camera id='camera' look-controls-magicWindowTrackingEnabled='false'
