@@ -131,21 +131,27 @@
 
 
 
-    <!-- </a-entity> -->
+      <!-- </a-entity> -->
+
+      <a-camera id='camera' look-controls-magicWindowTrackingEnabled='false'
+      arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 5'>
+      <a-cursor id="cursor" color="black" fuse="true" fuse-timeout="500" raycaster="objects: .clickable"></a-cursor>
 
        <!-- Example GPS entity using gps-entity-place -->
-       <a-entity 
+       <a-entity materal='color: red' geometry="'primitive box"
        gps-entity-place="latitude: 43.0842; longitude: -77.63249" 
        custom-listener>
       </a-entity>
 
       
-      <a-sphere radius="1" color="blue"></a-sphere>
+      <!-- <a-sphere radius="1" color="blue"></a-sphere> -->
 
       <!-- <a-camera gps-camera="simulateAltitude: true; gpsMinDistance: 1;" position="0 1.6 0" look-controls>  -->
-        <a-camera id='camera' look-controls-magicWindowTrackingEnabled='false'
+        <!-- <a-camera id='camera' look-controls-magicWindowTrackingEnabled='false'
         arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 5'>
-        <a-cursor id="cursor" color="black" fuse="true" fuse-timeout="500" raycaster="objects: .clickable"></a-cursor>
+        <a-cursor id="cursor" color="black" fuse="true" fuse-timeout="500" raycaster="objects: .clickable"></a-cursor> -->
+
+
       </a-camera>
 
   </a-scene>
