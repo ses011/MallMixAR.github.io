@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Custom Component with MarkerFound and GPS Update</title>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
-  </head>
-  <body style="margin: 0; overflow: hidden;">
+</head>
+
+<body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
-      <!-- Marker element with custom component -->
-      <a-marker type="pattern" url="pattern-764289463.607351.patt 2.txt" custom-listener>
-        <a-box position="0 0 0" color="#4CC3D9"></a-box>
-      </a-marker>
-      
-      <!-- Example GPS entity using gps-entity-place -->
-      <!-- <a-entity 
+        <!-- Marker element with custom component -->
+        <a-marker type="pattern" url="pattern-764289463.607351.patt 2.txt" custom-listener>
+            <a-box position="0 0 0" color="#4CC3D9"></a-box>
+            <a-entity static-body>
+                <a-gltf-model id="porsche" src="https://ses011.github.io/MallMixAR.github.io//porsche/scene.gltf"
+                    scale="5 5 5" rotation="0 -90 0" class="clickable">
+                </a-gltf-model>
+            </a-entity>
+        </a-marker>
+
+        <!-- Example GPS entity using gps-entity-place -->
+        <!-- <a-entity e
         gps-entity-place="latitude: 40.748817; longitude: -73.985428" 
         custom-listener>
         <a-sphere radius="1" color="blue"></a-sphere>
       </a-entity> -->
-      
-      <a-entity camera></a-entity>
-<!-- 
+
+        <a-entity camera></a-entity>
+        <!-- 
       gps-entity-place="latitude: 43.0837; longitude: -77.6765" -->
-      <a-entity static-body>
-        <a-gltf-model id="porsche" src="https://ses011.github.io/MallMixAR.github.io//porsche/scene.gltf" scale="5 5 5"
-          rotation="0 -90 0" class="clickable">
-        </a-gltf-model>
-      </a-entity>
-  
+
+
 
 
     </a-scene>
@@ -57,5 +60,6 @@
         }
       });
     </script> -->
-  </body>
+</body>
+
 </html>
