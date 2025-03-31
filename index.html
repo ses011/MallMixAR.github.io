@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -8,11 +8,12 @@
 </head>
 
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
+    <a-scene embedded arjs> -->
         <!-- Marker element with persistent visibility -->
          <!--try to change position (nothing is showing for me but before it showed but I did not change
          anything)-->
-        <a-marker preset="hiro" keep-visible>
+         <!--tried putting just a red box and that did not show up either-->
+        <!-- <a-marker preset="hiro" keep-visible>
             <a-entity static-body>
                 <a-gltf-model id="porsche" 
                     src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
@@ -25,6 +26,58 @@
         </a-marker>
 
         <a-entity camera></a-entity>
+    </a-scene> -->
+<!-- 
+    <script>
+      //not staying visible even though we set it to say as visible
+        AFRAME.registerComponent('keep-visible', {
+            init: function () {
+                var el = this.el;
+
+                el.addEventListener('markerFound', function () {
+                    console.log('Marker found! Car is visible.');
+                    el.setAttribute('visible', true); 
+                });
+
+                el.addEventListener('markerLost', function () {
+                    console.log('Marker lost! Keeping car visible.');
+                    el.setAttribute('visible', true);  
+                });
+            }
+        });
+    </script> -->
+<!-- </body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AR.js Marker with Persistent Model</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- add the sound in the sound tag-->
+        <a-marker preset="hiro" keep-visible>
+            <a-entity static-body>
+                <a-gltf-model id="porsche" 
+                    src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
+                    scale="1 1 1" 
+                    position="0 6 2"  
+                    rotation="0 0 0" 
+                    class="clickable"
+                    sound="src: url('https://www.soundjay.com/button/beep-07.wav'); autoplay: false;">
+                </a-gltf-model>
+            </a-entity>
+        </a-marker>
+
+        <!-- Camera with cursor component -->
+        <a-entity camera cursor="fuse: false; rayOrigin: mouse;"></a-entity>
     </a-scene>
 
     <script>
@@ -43,6 +96,16 @@
                 });
             }
         });
+
+        // Event listener to trigger sound on click
+        document.querySelector('#porsche').addEventListener('click', function () {
+            var sound = this.components.sound; 
+            if (sound) {
+                sound.play();
+                console.log('Honk sound played!');
+            }
+        });
     </script>
 </body>
 </html>
+
