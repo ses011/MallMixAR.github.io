@@ -66,6 +66,9 @@
         <!-- add the sound in the sound tag-->
         <a-marker preset="hiro" keep-visible>
             <a-entity static-body>
+
+                <!--porsche model (change postion/rotation based on marker)(want front of car to face us like its driving towards us)-->
+                <!--replace sound with sound we found-->
                 <a-gltf-model id="porsche" 
                     src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
                     scale="1 1 1" 
@@ -74,6 +77,28 @@
                     class="clickable"
                     sound="src: url('https://www.soundjay.com/button/beep-07.wav'); autoplay: false;">
                 </a-gltf-model>
+
+                <!--soda-poster (change position/rotation based on marker)-->
+                <a-gltf-model id="soda" 
+                  src="https://ses011.github.io/MallMixAR.github.io/soda-poster/scene.gltf"
+                  scale="1 1 1" 
+                  position="0 6 2"  
+                  rotation="0 0 0" 
+                  class="clickable">
+              </a-gltf-model>
+
+              <!--people model (change position/rotation based on marker)(just used car sound for now 
+              for testing purposes)-->
+              <a-gltf-model id="people" 
+                src="https://ses011.github.io/MallMixAR.github.io/people/scene.gltf"
+                scale="1 1 1" 
+                position="0 6 2"  
+                rotation="0 0 0" 
+                class="clickable"
+                sound="src: url('https://www.soundjay.com/button/beep-07.wav'); autoplay: false;">
+              </a-gltf-model>
+
+
             </a-entity>
         </a-marker>
 
@@ -98,7 +123,7 @@
             }
         });
 
-        // Event listener to trigger sound on click
+        // Event listener to trigger sound on click (for testing user interaction)
         document.querySelector('#porsche').addEventListener('click', function () {
             var sound = this.components.sound; 
             if (sound) {
@@ -106,6 +131,16 @@
                 console.log('Honk sound played!');
             }
         });
+
+        // Event listener to trigger sound on click (for testing user interaction)
+        document.querySelector('#people').addEventListener('click', function () {
+            var sound = this.components.sound; 
+            if (sound) {
+                sound.play();
+                console.log('peolpe sound played!');
+            }
+        });
+
     </script>
 </body>
 </html>
