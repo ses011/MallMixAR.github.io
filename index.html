@@ -11,16 +11,15 @@
     <a-scene embedded arjs>
         <!-- Marker element with persistent visibility -->
         <a-marker preset="hiro" keep-visible>
-            <!-- <a-entity static-body>
+            <a-entity static-body>
                 <a-gltf-model id="porsche" 
                     src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
                     scale="1 1 1" 
-                    position="0 6 -2"  
+                    position="0 6 2"  
                     rotation="0 0 0" 
                     class="clickable">
                 </a-gltf-model>
-            </a-entity> -->
-            <a-box position="0 5 -2" color="red"></a-box>
+            </a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
