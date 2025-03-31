@@ -64,6 +64,7 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
         <!-- add the sound in the sound tag-->
+         <!--create a scene out of these models by positioning them differently based on marker-->
         <a-marker preset="hiro" keep-visible>
             <a-entity static-body>
 
@@ -98,6 +99,15 @@
                 sound="src: url('https://www.soundjay.com/button/beep-07.wav'); autoplay: false;">
               </a-gltf-model>
 
+               <!-- Add text above the people model (not sure about the position to go above their heads
+                fix if needed) -->
+                <!--can change font if needed-->
+               <a-text value="People models talking or whatever" 
+               position="0 8 0"  
+               rotation="0 0 0"
+               color="blue"    
+               font="https://cdn.aframe.io/fonts/mozillavr.fnt"></a-text>
+
 
             </a-entity>
         </a-marker>
@@ -107,6 +117,7 @@
     </a-scene>
 
     <script>
+      //want the models to stay there even though we are not pointing camera at marker (not working)
         AFRAME.registerComponent('keep-visible', {
             init: function () {
                 var el = this.el;
