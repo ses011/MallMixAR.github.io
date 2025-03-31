@@ -10,15 +10,13 @@
 <body style="margin: 0; overflow: hidden;">
     <a-scene embedded arjs>
         <!-- Marker element with persistent visibility -->
-         <!-- The position="0 0 -2" makes porsche move 2 units away from marker -->
-        <a-marker preset="hiro">
-            <a-entity static-body keep-visible>
+        <a-marker preset="hiro" keep-visible>
+            <a-entity static-body>
                 <a-gltf-model id="porsche" 
                     src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
                     scale="1 1 1" 
-                    position="0 8 -2"  
+                    position="0 6 -2"  
                     rotation="0 0 0" 
-                    keep-visible
                     class="clickable">
                 </a-gltf-model>
             </a-entity>
@@ -31,20 +29,18 @@
         AFRAME.registerComponent('keep-visible', {
             init: function () {
                 var el = this.el;
-                
+
                 el.addEventListener('markerFound', function () {
                     console.log('Marker found! Car is visible.');
-                    el.setAttribute('visible', true); // Show the model when marker is detected
+                    el.setAttribute('visible', true); 
                 });
 
                 el.addEventListener('markerLost', function () {
                     console.log('Marker lost! Keeping car visible.');
-                    // Keep the model visible after losing the marker
-                    el.setAttribute('visible', true); 
+                    el.setAttribute('visible', true);  
                 });
             }
         });
     </script>
 </body>
 </html>
-
