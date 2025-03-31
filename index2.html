@@ -175,3 +175,86 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Custom Component with MarkerFound and GPS Update</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Marker element with custom component -->
+         <!--camera not working with QR code and car not rotating to show the front of the car (move car
+          based on marker to a certain distance away)-->
+        <!-- <a-marker type="barcode" url="https://ses011.github.io/MallMixAR.github.io/welcome_sign/pattern-marketplace_qr_code.patt"> -->
+        <!-- <a-marker preset='custom' type='pattern' url='https://ses011.github.io/MallMixAR.github.io/welcome_sign/pattern-marketplace_qr_code.patt'></a-marker> -->
+        <a-marker preset="hiro">
+            <!-- <a-box position="0 0 0" color="#4CC3D9"></a-box> -->
+            <a-entity static-body>
+                <a-gltf-model id="porsche" src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
+                    scale="1 1 1" rotation="90 180 0" class="clickable">
+                </a-gltf-model>
+            </a-entity>
+        </a-marker>
+
+        <!-- Example GPS entity using gps-entity-place -->
+        <!-- <a-entity e
+        gps-entity-place="latitude: 40.748817; longitude: -73.985428" 
+        custom-listener>
+        <a-sphere radius="1" color="blue"></a-sphere>
+      </a-entity> -->
+
+        <a-entity camera></a-entity>
+        <!-- 
+      gps-entity-place="latitude: 43.0837; longitude: -77.6765" -->
+
+
+
+
+    </a-scene>
+
+    <!-- <script>
+      // Register a custom component to handle events
+      AFRAME.registerComponent('custom-listener', {
+        init: function () {
+          var el = this.el;
+          
+          // Listen for the markerFound event (from AR.js)
+          el.addEventListener('markerFound', function () {
+            //console.log('Marker found on element', el);
+            alert("Marker found on element");
+            // For demonstration: Toggle the element's color
+            var currentColor = el.getAttribute('color');
+            el.setAttribute('color', currentColor === '#4CC3D9' ? '#EF2D5E' : '#4CC3D9');
+          });
+
+          // Listen for the gps-entity-place update event
+          // (This event is fired when the entity's position is updated based on GPS data)
+          el.addEventListener('gps-entity-place-update-position', function (evt) {
+            alert('GPS entity updated position: ' + evt.detail);
+            // You could update the UI or trigger additional actions based on the new position
+          });
+        }
+      });
+    </script> -->
+</body>
+
+</html>
