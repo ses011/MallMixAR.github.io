@@ -1,158 +1,35 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>AR.js Marker with Persistent Model</title>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js"></script>
-</head>
-
-<body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs> -->
-        <!-- Marker element with persistent visibility -->
-         <!--try to change position (nothing is showing for me but before it showed but I did not change
-         anything)-->
-         <!--tried putting just a red box and that did not show up either-->
-         <!--the model is not rotating to face us-->
-        <!-- <a-marker preset="hiro" keep-visible>
-            <a-entity static-body>
-                <a-gltf-model id="porsche" 
-                    src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
-                    scale="1 1 1" 
-                    position="0 6 2"  
-                    rotation="0 0 0" 
-                    class="clickable">
-                </a-gltf-model>
-            </a-entity>
-        </a-marker>
-
-        <a-entity camera></a-entity>
-    </a-scene> -->
-<!-- 
-    <script>
-      //not staying visible even though we set it to say as visible
-        AFRAME.registerComponent('keep-visible', {
-            init: function () {
-                var el = this.el;
-
-                el.addEventListener('markerFound', function () {
-                    console.log('Marker found! Car is visible.');
-                    el.setAttribute('visible', true); 
-                });
-
-                el.addEventListener('markerLost', function () {
-                    console.log('Marker lost! Keeping car visible.');
-                    el.setAttribute('visible', true);  
-                });
-            }
-        });
-    </script> -->
-<!-- </body>
-</html> -->
-
-
-
+<!-- Cleared out old index, starting from scratch -->
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>AR.js Marker with Persistent Model</title>
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js"></script>
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <!-- we use three.js to handle raycasting -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex.js"></script>
+    <!-- AR.js A-Frame components -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script>
+        AFRAME.registerComponent('clicker', {
+            init: function () {
+                this.el.addEventListener('click', e => {
+                    alert('Model clicked!');
+                });
+            }
+        });
+    </script>
 </head>
 
-<body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
-        <!-- add the sound in the sound tag-->
-         <!--create a scene out of these models by positioning them differently based on marker-->
-        <a-marker preset="hiro" keep-visible>
-            <a-entity static-body>
-
-                <!--porsche model (change postion/rotation based on marker)(want front of car to face us like its driving towards us)-->
-                <!--replace sound with sound we found-->
-                <a-gltf-model id="porsche" 
-                    src="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
-                    scale="1 1 1" 
-                    position="0 6 2"  
-                    rotation="0 0 0" 
-                    class="clickable"
-                    sound="src: url('https://www.soundjay.com/button/beep-07.wav'); autoplay: false;">
-                </a-gltf-model>
-
-                <!--soda-poster (change position/rotation based on marker)-->
-                <a-gltf-model id="soda" 
-                  src="https://ses011.github.io/MallMixAR.github.io/soda-poster/scene.gltf"
-                  scale="1 1 1" 
-                  position="0 6 2"  
-                  rotation="0 0 0" 
-                  class="clickable">
-              </a-gltf-model>
-
-              <!--people model (change position/rotation based on marker)(just used car sound for now 
-              for testing purposes)-->
-              <a-gltf-model id="people" 
-                src="https://ses011.github.io/MallMixAR.github.io/people/scene.gltf"
-                scale="1 1 1" 
-                position="0 6 2"  
-                rotation="0 0 0" 
-                class="clickable"
-                sound="src: url('https://www.soundjay.com/button/beep-07.wav'); autoplay: false;">
-              </a-gltf-model>
-
-               <!-- Add text above the people model (not sure about the position to go above their heads
-                fix if needed) -->
-                <!--can change font if needed-->
-               <a-text value="People models talking or whatever" 
-               position="0 8 0"  
-               rotation="0 0 0"
-               color="blue"    
-               font="https://cdn.aframe.io/fonts/mozillavr.fnt"></a-text>
-
-
-            </a-entity>
+<body style='margin: 0; overflow: hidden;'>
+    <a-scene embedded arjs vr-mode-ui='enabled: false'
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
+        renderer='antialias: true; alpha: true'>
+        <a-marker>
+            <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" scale="1 1 1"
+                rotation="0 0 0" position="0 0 0" clicker></a-entity>
         </a-marker>
-
-        <!-- Camera with cursor component -->
-        <a-entity camera cursor="fuse: false; rayOrigin: mouse;"></a-entity>
+        <a-camera></a-camera>
     </a-scene>
-
-    <script>
-      //want the models to stay there even though we are not pointing camera at marker (not working)
-        AFRAME.registerComponent('keep-visible', {
-            init: function () {
-                var el = this.el;
-
-                el.addEventListener('markerFound', function () {
-                    console.log('Marker found! Car is visible.');
-                    el.setAttribute('visible', true); 
-                });
-
-                el.addEventListener('markerLost', function () {
-                    console.log('Marker lost! Keeping car visible.');
-                    el.setAttribute('visible', true);  
-                });
-            }
-        });
-
-        // Event listener to trigger sound on click (for testing user interaction)
-        document.querySelector('#porsche').addEventListener('click', function () {
-            var sound = this.components.sound; 
-            if (sound) {
-                sound.play();
-                console.log('Honk sound played!');
-            }
-        });
-
-        // Event listener to trigger sound on click (for testing user interaction)
-        document.querySelector('#people').addEventListener('click', function () {
-            var sound = this.components.sound; 
-            if (sound) {
-                sound.play();
-                console.log('peolpe sound played!');
-            }
-        });
-
-    </script>
 </body>
-</html>
 
+</html>
