@@ -15,21 +15,21 @@
         raycaster="objects: .clickable">
 
         <!-- Make the model initially not visible -->
-        <a-marker preset="hiro" markerhandler arjs-anchor="preserveAR: true">
-            <a-entity id="car-model" 
+        <a-marker-camera preset="hiro" markerhandler arjs-anchor="preserveAR: true">
+            <!-- <a-entity id="car-model" 
                 gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
                 scale="1 1 1" 
                 rotation="-90 0 0" 
                 position="0 -8 0" 
                 visible="false" 
                 clicker>
-            </a-entity>
-        </a-marker>
+            </a-entity> -->
+        </a-marker-camera>
 
         <a-entity id="click-sound"
             sound="src: https://ses011.github.io/MallMixAR.github.io/car-horn.mp3; autoplay: false"></a-entity>
 
-        <a-camera><a-cursor></a-cursor></a-camera>
+        <!-- <a-camera><a-cursor></a-cursor></a-camera> -->
 
     </a-scene>
 
