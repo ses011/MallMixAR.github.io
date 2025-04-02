@@ -36,8 +36,8 @@ window.onload(() => {
 
     AFRAME.registerComponent('markerhandler', {
         init: function () {
-            let marker = this.el;
-            console.log(marker);
+            let m = this.el;
+            console.log(`m: ${m}`);
             // let model = document.querySelector('#car-model');
 
             // if (!model) {
