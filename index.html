@@ -17,6 +17,8 @@
                     }
 
                     //make sure the model shows when the marker is found and when it is lost 
+                    //not working on found and lost event and car follows the camera
+                    //and does not stay at the position we set from the camera**
                     marker.addEventListener('markerFound', () => {
                         console.log("Marker found! Showing model.");
                         model.setAttribute('visible', true);
