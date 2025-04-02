@@ -16,6 +16,7 @@
                         return;
                     }
 
+                    //make sure the model shows when the marker is found and when it is lost 
                     marker.addEventListener('markerFound', () => {
                         console.log("Marker found! Showing model.");
                         model.setAttribute('visible', true);
@@ -23,7 +24,7 @@
 
                     marker.addEventListener('markerLost', () => {
                         console.log("Marker lost! Keeping model visible.");
-                        model.setAttribute('visible', true); // Ensure it stays visible
+                        model.setAttribute('visible', true); 
                     });
                 }
             });
@@ -51,13 +52,13 @@
         renderer="antialias: true; alpha: true" cursor="rayOrigin: mouse" 
         raycaster="objects: .clickable">
 
-        <!-- Hiro marker with preserveAR -->
+        <!-- Make the model initially not visible -->
         <a-marker preset="hiro" markerhandler arjs-anchor="preserveAR: true">
             <a-entity id="car-model" 
                 gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
-                scale="0.5 0.5 0.5" 
+                scale="1 1 1" 
                 rotation="-90 0 0" 
-                position="0 0.1 0" 
+                position="0 -8 0" 
                 visible="false" 
                 clicker>
             </a-entity>
