@@ -2,36 +2,39 @@
 <html>
 
 <head>
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="src/script.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <!-- <script src="src/script.js"></script> -->
+  <script>
+    AFRAME.registerComponent('move', {
+      tick: function () {
+        let marker = this.el.sceneEl.querySelector('a-marker');
+        this.el.object3D.setRotationFromQuaternion(obj3d.object3D.quaternion);
+        this.el.object3D.position.set(object3d.object3D.position.x, obj3d.obj3D.position.y, obj3d.obj3D.position.z);
+      }
+    }) 
+  </script>
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
+  <a-scene embedded arjs vr-mode-ui="enabled: false"
+    arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false" renderer="antialias: true; alpha: true"
+    cursor="rayOrigin: mouse" raycaster="objects: .clickable">
 
-    <a-scene embedded arjs vr-mode-ui="enabled: false"
-        arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false" 
-        renderer="antialias: true; alpha: true" cursor="rayOrigin: mouse" 
-        raycaster="objects: .clickable">
+    <!-- Make the model initially not visible -->
+    <a-marker preset="hiro" markerhandler arjs-anchor="preserveAR: true">
+      <a-entity id="car-model" gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
+        scale="1 1 1" rotation="-90 0 0" position="0 -8 0" visible="false" clicker>
+      </a-entity>
+    </a-marker>
 
-        <!-- Make the model initially not visible -->
-        <a-marker preset="hiro" markerhandler arjs-anchor="preserveAR: true">
-            <a-entity id="car-model" 
-                gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf"
-                scale="1 1 1" 
-                rotation="-90 0 0" 
-                position="0 -8 0" 
-                visible="false" 
-                clicker>
-            </a-entity>
-        </a-marker>
+    <a-entity id="click-sound"
+      sound="src: https://ses011.github.io/MallMixAR.github.io/car-horn.mp3; autoplay: false"></a-entity>
 
-        <a-entity id="click-sound"
-            sound="src: https://ses011.github.io/MallMixAR.github.io/car-horn.mp3; autoplay: false"></a-entity>
+    <a-camera><a-cursor></a-cursor></a-camera>
 
-        <a-camera><a-cursor></a-cursor></a-camera>
-
-    </a-scene>
+  </a-scene>
 
 </body>
 
