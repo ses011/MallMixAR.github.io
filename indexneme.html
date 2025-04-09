@@ -25,10 +25,8 @@
     <a-scene embedded arjs vr-mode-ui='enabled: false'
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
         renderer='antialias: true; alpha: true' cursor='rayOrigin: mouse' raycaster="objects: .clickable">
-        <a-marker>
-            <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" scale="1 1 1"
-                rotation="-90 0 0" position="0 -8 0" clicker></a-entity>
-        </a-marker>
+        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" scale="1 1 1"
+            rotation="-90 0 0" position="0 -8 0" clicker></a-entity>
         <a-entity id="click-sound"
             sound="src: https://ses011.github.io/MallMixAR.github.io/car-horn.mp3; autoplay: false"></a-entity>
         <a-camera><a-cursor></a-cursor></a-camera>
