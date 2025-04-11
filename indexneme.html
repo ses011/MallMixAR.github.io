@@ -27,11 +27,12 @@
         renderer='antialias: true; alpha: true' cursor='rayOrigin: mouse' raycaster="objects: .clickable">
         <a-camera>
             <!--poster-->
-            <a-image src="https://ses011.github.io/MallMixAR.github.io/soda-ad.png"></a-image>
+            <a-assets>
+                <img id="ad" src="https://ses011.github.io/MallMixAR.github.io/soda-ad.png"></a-assets>
             <!--porsche model-->
-            <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" scale="1 1 1"
+            <!-- <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" scale="1 1 1"
                 rotation="0 345 0" position="0 -0.5 -3" clicker></a-entity>
-            <!--sound cue-->
+            sound cue -->
             <a-entity id="click-sound"
                 sound="src: https://ses011.github.io/MallMixAR.github.io/car-horn.mp3; autoplay: false"></a-entity>
             <a-cursor></a-cursor>
