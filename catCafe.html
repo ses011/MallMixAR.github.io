@@ -25,9 +25,9 @@
     <a-scene embedded arjs vr-mode-ui='enabled: false'
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
         renderer='antialias: true; alpha: true' cursor='rayOrigin: mouse' raycaster="objects: .clickable">
-        <a-camera>
+        <a-cameras>
             <!--table and chairs-->
-            <a-entity
+            <a-entity cursor="fuse: false; rayOrigin: mouse"
                 gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/coffee_shop_table_and_stools.glb"
                 scale="1 1 1" rotation="0 280 0" position="0 -1.2 -5" clicker></a-entity>
             <!--cup-->
