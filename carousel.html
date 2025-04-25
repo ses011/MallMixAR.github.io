@@ -25,15 +25,15 @@
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
         renderer='antialias: true; alpha: true' cursor='rayOrigin: mouse' raycaster="objects: .clickable">
         <a-camera>
-            <a-entity cursor="fuse: false; rayOrigin: mouse"></a-entity>
-            <!--phone-->
-            <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/phone/scene.gltf" scale="0.01 0.01 0.01"
-                rotation="0 -75 0" position="0 0 -3" clicker></a-entity>
-            <!-- sound cue -->
-            <a-entity id="click-sound"
-                sound="src: https://ses011.github.io/MallMixAR.github.io/phone/phone.mp3; autoplay: false"></a-entity>
-            <a-cursor></a-cursor>
+
         </a-camera>
+        <!--porsche model-->
+        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/carousel/scene.gltf" scale="1 1 1"
+            rotation="0 0 0" position="0 0 0" clicker></a-entity>
+        <!-- sound cue -->
+        <!-- <a-entity id="click-sound"
+            sound="src: https://ses011.github.io/MallMixAR.github.io/car-horn.mp3; autoplay: false"></a-entity> -->
+        <a-cursor></a-cursor>
     </a-scene>
 </body>
 
