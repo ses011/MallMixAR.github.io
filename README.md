@@ -12,9 +12,16 @@ Cat2: https://sketchfab.com/3d-models/miniature-cat-7aabffe566ef462db6d1cd6a6dd4
 Audio: https://pixabay.com/sound-effects/cat-purring-261128/
 
 ## Car
+Sketchfab (Unavailable)
+
+Audio: https://www.youtube.com/watch?v=iFPBhBRMyfw
 
 ## Carousel
+Carousel: https://sketchfab.com/3d-models/carousel-spinning-bedf6f052d9249bd8c7969d788349895
 
 ## Pay Phone
+Sketchfab (Unavailable)
+
+Audio: https://youtu.be/kXYIut4TnhI?si=jiXOexh-i7hPXcQT
 
 ## Crowd
