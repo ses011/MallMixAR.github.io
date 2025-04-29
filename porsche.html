@@ -22,19 +22,21 @@
 </head>
 
 <body style='margin: 0; overflow: hidden;'>
-    <a-scene embedded vr-mode-ui="enabled: false" arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
-        renderer="antialias: true; alpha: true" cursor="rayOrigin: mouse" raycaster="objects: .clickable">
+    <a-scene embedded arjs vr-mode-ui='enabled: false'
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
+        renderer='antialias: true; alpha: true' cursor='rayOrigin: mouse' raycaster="objects: .clickable">
+        <a-camera>
 
-        <a-camera></a-camera>
-
+        </a-camera>
+        <!--poster-->
+        <!-- <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/soda-poster/scene.gltf" scale="0.22 0.22 0.22"
+                rotation="0 0 10" position="-2 2 -15" clicker></a-entity> -->
         <!--porsche model-->
-        <!-- Test without GPS -->
-        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" position="0 0 0"
-            scale="1 1 1" rotation="0 345 0" clicker></a-entity>
-
+        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" scale="1 1 1"
+            rotation="0 345 0" position="0 -0.45 -3" clicker></a-entity>
         <!-- sound cue -->
         <a-entity id="click-sound"
-            sound="src: https://ses011.github.io/MallMixAR.github.io/porsche/car-horn.mp3; autoplay: false"></a-entity>
+            sound="src: https://ses011.github.io/MallMixAR.github.io/car-horn.mp3; autoplay: false"></a-entity>
         <a-cursor></a-cursor>
     </a-scene>
 </body>
