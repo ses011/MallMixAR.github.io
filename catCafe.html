@@ -25,25 +25,36 @@
     <a-scene embedded arjs vr-mode-ui='enabled: false'
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
         renderer='antialias: true; alpha: true' cursor='rayOrigin: mouse' raycaster="objects: .clickable">
-        <a-camera>
+        <!-- <a-camera>
             <a-entity cursor="fuse: false; rayOrigin: mouse"></a-entity>
-        </a-camera>
+        </a-camera> -->
         <!--table and chairs-->
-        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/coffee_shop_table_and_stools.glb"
-            scale="1 1 1" rotation="0 280 0" gps-entity-place="longitude:43.08344 latitude:-77.63309" clicker></a-entity>
+        <!-- <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/coffee_shop_table_and_stools.glb"
+            scale="1 1 1" rotation="0 280 0" gps-entity-place="longitude:43.08344 latitude:-77.63309" clicker></a-entity> -->
         <!--cup-->
-        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/coffee_shop_cup.glb"
-            scale=".3 .3 .3" rotation="0 0 0" position="0 -0.1 -5" clicker></a-entity>
+        <!-- <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/coffee_shop_cup.glb"
+            scale=".3 .3 .3" rotation="0 0 0" position="0 -0.1 -5" clicker></a-entity> -->
         <!--orange tuxedo cat-->
-        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/miniature_cat.glb"
-            scale=".35 .35 .35" rotation="0 0 0" position="0.8 -0.35 -5.1" clicker></a-entity>
+        <!-- <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/miniature_cat.glb"
+            scale=".35 .35 .35" rotation="0 0 0" position="0.8 -0.35 -5.1" clicker></a-entity> -->
         <!--Sleeping cat-->
-        <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/cat.glb" scale="1 1 1"
-            rotation="0 0 0" position="-0.4 -1.4 -6.3" clicker></a-entity>
+        <!-- <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/cat.glb" scale="1 1 1"
+            rotation="0 0 0" position="-0.4 -1.4 -6.3" clicker></a-entity> -->
         <!-- sound cue -->
-        <a-entity id="click-sound"
-            sound="src: https://ses011.github.io/MallMixAR.github.io/cat-cafe/cat-purring.mp3; autoplay: false" volume="0.5"></a-entity>
-        <a-cursor></a-cursor>
+        <!-- <a-entity id="click-sound"
+            sound="src: https://ses011.github.io/MallMixAR.github.io/cat-cafe/cat-purring.mp3; autoplay: false" volume="0.5"></a-entity> -->
+        <!-- <a-cursor></a-cursor> -->
+
+        <a-camera gps-camera>
+            <a-entity
+                gltf-model="https://ses011.github.io/MallMixAR.github.io/cat-cafe/coffee_shop_table_and_stools.glb"
+                scale="1 1 1" rotation="0 280 0" gps-entity-place="latitude:-77.63309 longitude:43.08344"
+                clicker></a-entity>
+
+
+        </a-camera>
+
+
     </a-scene>
 </body>
 
