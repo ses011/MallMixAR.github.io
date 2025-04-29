@@ -23,17 +23,19 @@
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene embedded vr-mode-ui="enabled: false"
-        arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false; gpsMinAccuracy: 100; gpsTimeInterval: 1000;"
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'
         renderer="antialias: true; alpha: true" cursor="rayOrigin: mouse" raycaster="objects: .clickable">
         
+        
+        <a-camera gps-camera="gpsMinDistance: 3"></a-camera>
+
         <!--porsche model-->
         <a-entity gltf-model="https://ses011.github.io/MallMixAR.github.io/porsche/scene.gltf" scale="1 1 1"
-            gps-entity-place="latitude: 43.08421; longitude: -77.63244" rotation="0 345 0" clicker></a-entity>
+            rotation="0 345 0" gps-entity-place="latitude: 43.0842; longitude: -77.6324" clicker></a-entity>
         <!-- sound cue -->
         <a-entity id="click-sound"
             sound="src: https://ses011.github.io/MallMixAR.github.io/porsche/car-horn.mp3; autoplay: false"></a-entity>
         <a-cursor></a-cursor>
-        <a-camera gps-camera></a-camera>
     </a-scene>
 </body>
 
