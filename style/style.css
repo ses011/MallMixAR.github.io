@@ -10,8 +10,9 @@ body {
         position: fixed;
         top: 5px;
         left: 5px;
+        height: 10vw;
         img {
-            width: 5vw;
+            width: 10vw;
         }
     }
 
