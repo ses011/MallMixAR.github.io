@@ -18,6 +18,12 @@
                 });
             }
         });
+
+        windows.onload = () => {
+            document.querySelector("#back-btn").addEventListener('click', () => {
+                window.location = "https://ses011.github.io/MallMixAR.github.io/";
+            })
+        }
     </script>
 
     <link rel="stylesheet" href="style/style.css">
@@ -25,7 +31,7 @@
 
 <body>
     <div class="back">
-        <img src="https://ses011.github.io/MallMixAR.github.io/style/right-arrow.png" onclick="location.href='index.html'">
+        <img id="back-btn" src="https://ses011.github.io/MallMixAR.github.io/style/right-arrow.png">
     </div>
     <a-scene embedded arjs vr-mode-ui='enabled: false'
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
