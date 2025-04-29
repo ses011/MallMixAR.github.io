@@ -19,14 +19,17 @@
             }
         });
     </script>
+
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <!-- <div>
-        <button onclick="history.back()" class="back-btn">
-            <img src="/style/right-arrow.png">
+    <div class="back">
+        <button >
+            <a href="index.html"><img src="/style/right-arrow.png"></a>
+            
         </button>
-    </div> -->
+    </div>
     <a-scene embedded arjs vr-mode-ui='enabled: false'
         arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'
         renderer='antialias: true; alpha: true' cursor='rayOrigin: mouse' raycaster="objects: .clickable">

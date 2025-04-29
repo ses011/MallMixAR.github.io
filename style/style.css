@@ -4,11 +4,15 @@ body {
     background-color: #e4e4e4;
 
 
-    .back-btn {
+    .back {
+        transform: rotate(180deg);
+
         position: fixed;
-        width: 5vw;
-        height: 5vw;
-        
+        top: 5px;
+        left: 5px;
+        img {
+            width: 5vw;
+        }
     }
 
     h1 {
