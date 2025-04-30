@@ -24,4 +24,3 @@ Sketchfab (Unavailable)
 
 Audio: https://youtu.be/kXYIut4TnhI?si=jiXOexh-i7hPXcQT
 
-## Crowd
