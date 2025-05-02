@@ -3,19 +3,6 @@ body {
     overflow: hidden;
     background-color: #e4e4e4;
 
-
-    .back {
-        transform: rotate(180deg);
-
-        position: fixed;
-        top: 5px;
-        left: 5px;
-        height: 10vw;
-        img {
-            width: 10vw;
-        }
-    }
-
     h1 {
         text-align: center;
         color: #f1f1f1;
@@ -24,14 +11,16 @@ body {
     }
 
     h3 {
-        font-size: .8em;
-        margin: 1vh 3vw 20vh;
+        font-size: .9em;
+        margin: 1vh 3vw 5vh;
         text-decoration: none;
 
     }
 
+
     p {
-        font-size: .7em;
+        margin: 4vw;
+        font-size: .8em;
     }
 
     .btn-group {
@@ -39,8 +28,8 @@ body {
         flex-direction: column;
         flex-wrap: nowrap;
         row-gap: 2vh;
-        align-items: center;
-        margin: 1vh 3vw 20vh;
+        align-self: center;
+        margin: 1vh 3vw 5vh;
 
         .button {
             background-color: #32a875;
@@ -52,13 +41,20 @@ body {
             filter: drop-shadow(2px 5px #2b865f);
         }
 
-        a:link,
-        a:visited,
-        a:active,
-        a:hover {
-            color: black;
-            text-decoration: none;
+        img {
+            border: 3px solid #2b865f;
+            width: 90vw;
         }
+
+
+    }
+
+    a:link,
+    a:visited,
+    a:active,
+    a:hover {
+        color: black;
+        text-decoration: none;
     }
 }
 
@@ -66,5 +62,5 @@ footer {
     height: 5vh;
     width: 100%;
     background-color: #c2c2c2;
-
+    text-decoration: underline;
 }
